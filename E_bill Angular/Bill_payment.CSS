@@ -1,0 +1,149 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    /* height: 100%; */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+  
+  /* Header */
+  .header {
+    background-color:#5ac9e1;
+    color: white;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  /* Content Area */
+  .content {
+    padding: 20px;
+    flex: 1;
+  }
+  
+  .content h2 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .bill-details {
+    margin-bottom: 20px;
+  }
+  
+  .bill-details p {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
+  .bill-details p span {
+    font-weight: bold;
+  }
+  
+  .payment-options {
+    margin-bottom: 20px;
+  }
+  
+  .payment-options label {
+    margin-right: 20px;
+    font-size: 16px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button.pay {
+    background-color: #50cc6f;
+    color: white;
+  }
+  
+  button.back {
+    background-color: #ccc;
+    color: #161515;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  /* Footer */
+  footer {
+    background-color:#5ac9e1;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer-content {
+    flex: 1;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-links li {
+    margin: 0 10px;
+  }
+  
+  .footer-links li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+  }
+  
+  .footer-links li a:hover {
+    color: #FF5F15;
+  }
+  
+  .social-media {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .social-icon {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    font-size: 1.2em;
+    transition: color 0.3s;
+  }
+  
+  .social-icon:hover {
+    color: #FF5F15;
+  }
+  

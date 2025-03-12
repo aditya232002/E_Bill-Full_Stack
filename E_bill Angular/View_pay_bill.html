@@ -1,0 +1,50 @@
+<div class="container">
+    <header>
+      <h1>Electricity Bill</h1>
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+        <div id="welcomeMessage" class="welcome-message">{{ welcomeMessage }}</div>
+        <a routerLink="/home">Home</a>
+        <a routerLink="/complain-registration">Complaint Register</a>
+        <a routerLink="/status">Complaint Status</a>
+        <a class="logout" routerLink="/index">Logout</a>
+      </div>
+      <span class="open-btn" (click)="openNav()">&#9776;</span>
+    </header>
+  
+    <main>
+      <h2>Pay Your Bills</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Select</th>
+            <th>Bill Number</th>
+            <th>Month</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let bill of bills; let i = index">
+            <td>
+              <input
+                type="checkbox"
+                class="bill-checkbox"
+                [checked]="billState[i]"
+                (change)="toggleBillSelection(i, bill.amount)"
+              />
+            </td>
+            <td>{{ bill.id }}</td>
+            <td>{{ bill.month }}</td>
+            <td>₹{{ bill.amount }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="total">
+        <p>Total Amount: ₹<span>{{ totalAmount }}</span></p>
+      </div>
+      <div class="actions">
+        <button (click)="proceedToPay()">Proceed to Pay</button>
+      </div>
+    </main>
+  </div>
+  

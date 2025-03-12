@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Payment</title>
+ 
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Bill Payment</h1>
+        </div>
+        <div class="content">
+            <div id="billDetails" class="bill-details">
+                
+                    <p><span>Consumer Number:</span> <span id="consumerNumber"></span></p>
+                    <p><span>Bill Number:</span> <span id="billNumber"></span></p>
+                    <p><span>Amount: </span> <span id="payableAmount"></span></p>
+                
+                
+            </div>
+
+            <div class="payment-options">
+                <h2>Select your mode of payment:</h2>
+                <label><input type="radio" name="payment-method" value="credit-card"> Credit Card</label>
+                <label><input type="radio" name="payment-method" value="debit-card"> Debit Card</label>
+            </div>
+
+            <div class="buttons">
+                <button class="pay">Pay Now</button>
+                <button class="back" onclick="location.href='view_pay_bill.html'">Back</button>
+            </div>
+
+            <div class="error" id="error-message"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
