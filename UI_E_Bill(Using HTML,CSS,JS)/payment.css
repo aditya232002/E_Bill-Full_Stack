@@ -1,0 +1,150 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Enables Flexbox */
+    flex-direction: column; /* Stack children vertically */
+    min-height: 100vh; /* Full height of the viewport */
+}
+
+.payment-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin: auto; /* Center horizontally and vertically */
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: #12a4aa;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #147b7e;
+    box-shadow: 0 0 5px #147b7e;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.form-row div {
+    flex: 1;
+}
+
+.error {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+button {
+    width: 98%;
+    padding: 8px;
+    background-color: #5ac9e1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color:#147b7e;
+}
+
+button:active {
+    background-color:#147b7e;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+footer {
+    background-color:  #5ac9e1;
+    color: white;
+    padding: 5px;
+    margin-top: auto; /* Pushes the footer to the bottom */
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-content {
+    flex: 1;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-links li {
+    margin: 0 10px;
+}
+
+.footer-links li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.footer-links li a:hover {
+    color: #FF5F15;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.social-icon {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #FF5F15;
+}

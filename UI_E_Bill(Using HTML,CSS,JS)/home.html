@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("beautiful.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-buttons button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            color: white;
+            background-color: #dc3545;
+            /* Button color */
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .header-buttons button:hover {
+            background-color: #c82333;
+            /* Hover color */
+            transform: translateY(-3px);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin-top: 80px;
+            flex-wrap: wrap;
+            /* Allow wrapping for smaller screens */
+        }
+
+        .welcome-message {
+            padding: 30px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            margin-right: 20px;
+            /* Margin for space between elements */
+            position: relative;
+            /* Position relative for text visibility */
+            z-index: 1;
+            /* Ensure it’s above background */
+        }
+
+        .welcome-message h2 {
+            font-size: 2.5em;
+            /* Bigger title */
+            margin: 0;
+            color: #fff;
+            /* White text color */
+        }
+
+        .welcome-message p {
+            font-size: 1.5em;
+            /* Larger text for welcome message */
+            color: #fff;
+            /* White text color */
+        }
+
+        .login-form {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            /* Add shadow for depth */
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            /* Button color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .login-form button:hover {
+            background-color: #218838;
+            /* Hover color */
+            transform: translateY(-3px);
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: -10px;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .welcome-message,
+            .login-form {
+                margin: 10px 0;
+            }
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #007bff;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #ffffff;
+            display: block;
+            transition: 0.0s;
+        }
+
+        .sidenav a:hover {
+            color: #000000;
+        }
+
+        .sidenav.closebtn {
+            position: absolute;
+            top: 0;
+            left: 25px;
+            font-size: 35px;
+            margin-right: 50px;
+        }
+
+        .sidenav .user-info {
+            padding: 8px 32px;
+            font-size: 25px;
+            color: #f1f1f1;
+        }
+
+        .sidenav .logout {
+            padding: 8px 32px;
+            color: #f1f1f1;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .sidenav .logout:hover {
+            color: #f70000;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        .open-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Electricity Bill Payment</h1>
+        
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="user-info" id="userInfo"></div>
+            <a href="view_pay_bill.html">Pay Bills</a>
+            <a href="complain_registration.html">Register Complain</a>
+            <a href="status.html">Complain Status</a>
+            <a class="logout" href="index.html">Logout</a>
+        </div>
+        <span class="open-btn" onclick="openNav()">&#9776;</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="welcome-message">
+            <h2 id="welcomeMessage"><b></b></h2>
+            <p><i>Your one-step solution for Electricity Bills</i></p>
+            <br><br><br>
+            <p style=> Pay your <a href="view_pay_bill.html">Pending Bills</a></p>
+            <p>Having any Issue?? <a href="complain_registration.html">Register Complain Now</a></p>
+        </div>
+    </div>
+</body>
+<script>
+    const storedName = localStorage.getItem('customerName');
+    if (storedName) {
+        welcomeMessage.textContent = `Welcome ${storedName}!`;
+    }
+
+    // Function to open the side navigation
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+
+        document.getElementById("userInfo").textContent = `Welcome, ${storedName}!`;
+    }
+
+    // Function to close the side navigation
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
+    // Function to handle logout
+    function logout() {
+        alert("Logging out...");
+        // Add your logout logic here, such as redirecting to a logout URL or clearing session data
+        window.location.href = "index.html"; // Example logout URL
+    }
+    
+    
+    const a2 = localStorage.getItem('customerName');
+    const a3 = localStorage.getItem('email');
+    const a4 = localStorage.getItem('mobileNumber');
+    const a5 = localStorage.getItem('userId');
+    const a6 = localStorage.getItem('password');
+    const a7 = localStorage.getItem('randomCustomerId');
+    const a8 = localStorage.getItem('billNumber');
+    console.log(a2);
+    console.log(a3);
+    console.log(a4);
+    console.log(a5);
+    console.log(a6);
+    console.log(a7);
+    console.log(a8);
+    console.log(storedName);
+    
+    
+   
+</script>
+
+</html>

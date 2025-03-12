@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View/Pay Bill</title>
+    <!-- <link rel="stylesheet" href="view_pay_bill.css"> -->
+
+    <style>
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    padding: 0;
+    height: 100%;
+    margin: 0px;
+    padding-top: 0px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5ac9e1;
+    color: white;
+    padding: 15px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+.welcome-message {
+    font-size: 20px;
+    color: white;
+    margin-left: 32px;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+}
+
+.user-info {
+    font-size: 1rem;
+    margin-right: 20px;
+}
+
+.user-info button {
+    margin-left: 10px;
+    padding: 8px 15px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+main {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+main h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #5ac9e1;
+    color: white;
+}
+
+.total {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.actions button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.actions button:hover {
+    background-color: #218838;
+}
+
+footer {
+    background-color: #5ac9e1;
+    color: white;
+    text-align: center;
+    padding: 0px;
+    margin-top: auto;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%; /* Push footer to the bottom */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content {
+    flex: 1; /* Makes the content take the remaining space */
+  }
+  
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-content {
+    flex: 1;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-links li {
+    margin: 0 10px;
+}
+
+.footer-links li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.footer-links li a:hover {
+    color: #FF5F15;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.social-icon {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #FF5F15;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0; 
+    background-color:#347989;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #000000;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    font-size: 36px;
+}
+
+.sidenav .logout {
+    padding: 8px 32px;
+    font-size: 20px;
+    color: #f1f1f1;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sidenav .logout:hover {
+    color: red;
+}
+
+.open-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px; 
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Sidebar container
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0; 
+    background-color: #2c3e50;
+    overflow-x: hidden;
+    transition: all 0.4s ease-in-out;
+    padding-top: 60px;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3); 
+}
+
+
+.sidenav a {
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #bdc3c7;
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    transition: all 0.3s ease;
+}
+
+
+.sidenav a:hover {
+    color: #ecf0f1;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 30px;
+    color: #bdc3c7;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.sidenav .closebtn:hover {
+    color: #ecf0f1;
+}
+
+
+.sidenav .logout {
+    margin-top: 30px;
+    padding: 15px 20px;
+    font-size: 18px;
+    color: #e74c3c;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: rgba(231, 76, 60, 0.1);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.sidenav .logout:hover {
+    color: #fff;
+    background-color: #e74c3c;
+}
+
+
+.open-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #2c3e50;
+    cursor: pointer;
+    z-index: 1001; 
+    transition: color 0.3s ease;
+}
+
+.open-btn:hover {
+    color: #34495e;
+}
+
+
+body {
+    transition: margin-right 0.4s ease-in-out;
+}
+
+
+.sidenav.open {
+    width: 250px;
+}
+
+body.sidenav-open {
+    margin-right: 250px; 
+} */
+
+
+    </style>
+</head>
+
+<body>
+    
+
+    <class="container">
+        <header>
+            <h1>Electricity Bill</h1>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div id="welcomeMessage" class="welcome-message"></div>
+                <a href="home.html">Home</a>
+                <a href="complain_registration.html">Complaint Register</a>
+                <a href="status.html">Complaint Status</a>
+                <a class="logout" href="index.html">Logout</a>
+            </div>
+            <span class="open-btn" onclick="openNav()">&#9776;</span>
+        </header>
+
+        <main>
+            <h2>Pay Your Bills</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Bill Number</th>
+                        <th>Month</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="billList">
+                </tbody>
+            </table>
+            <div class="total">
+                <p>Total Amount: ₹<span id="totalAmount">0</span></p>
+            </div>
+            <div class="actions">
+                <button id="proceedToPay">Proceed to Pay</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <p>&copy; 2024 Electricity Bill Services. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                    <li><a href="terms_conditions.html">Terms & Conditions</a></li>
+                    <li><a href="contact_us.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <a href="https://facebook.com" target="_blank" class="social-icon">Facebook</a>
+                <a href="https://twitter.com" target="_blank" class="social-icon">Twitter</a>
+                <a href="https://instagram.com" target="_blank" class="social-icon">Instagram</a>
+            </div>
+        </div>
+    </footer> -->
+
+    <!-- <script src="view_pay_bill.js"></script> -->
+
+    <script>
+        
+ 
+
+// Display welcome message;
+const loggedInUser = localStorage.getItem('customerNamer');
+const welcomeMessage = document.getElementById("welcomeMessage");
+const storedName = localStorage.getItem('customerName');
+    if (storedName) {
+        welcomeMessage.textContent = `Welcome ${storedName}!`;
+    }
+
+// Sidebar and logout functionality
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+function logout() {
+    alert("Logged out successfully!");
+    window.location.href = "login.html";
+}
+
+// Scrolling header behavior
+let lastScrollTop = 0;
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+    const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScrollTop > lastScrollTop) {
+        header.style.top = "-60px"; // Adjust based on header height
+    } else {
+        header.style.top = "0";
+    }
+
+    lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Avoid negative scroll
+});
+
+// Scrolling footer behavior
+const footer = document.querySelector("footer");
+
+window.addEventListener("scroll", () => {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        // At the bottom of the page
+        footer.classList.add("highlight"); // Add a class to highlight footer
+    } else {
+        footer.classList.remove("highlight");
+    }
+});
+
+const bills = [
+    { id: 1001, month: "January", amount: 500 },
+    { id: 1002, month: "Feb", amount: 750 },
+    { id: 1003, month: "March", amount: 1200 },
+];
+
+const billList = document.getElementById("billList");
+const totalAmountSpan = document.getElementById("totalAmount");
+
+// Populate the table with bill data
+bills.forEach((bill, index) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+        <td><input type="checkbox" class="bill-checkbox" data-index="${index}" data-amount="${bill.amount}"></td>
+        <td>${bill.id}</td>
+        <td>${bill.month}</td>
+        <td>₹${bill.amount}</td>
+    `;
+    billList.appendChild(row);
+});
+
+// Load the saved state from localStorage
+function loadState() {
+    const savedState = JSON.parse(localStorage.getItem("billState")) || {};
+    const checkboxes = document.querySelectorAll(".bill-checkbox");
+    let total = 0;
+
+    checkboxes.forEach((checkbox) => {
+        const index = checkbox.dataset.index;
+        if (savedState[index]) {
+            checkbox.checked = true;
+            total += parseInt(checkbox.dataset.amount, 10);
+        }
+    });
+
+    totalAmountSpan.textContent = total;
+}
+
+// Save the current state to localStorage
+function saveState() {
+    const checkboxes = document.querySelectorAll(".bill-checkbox");
+    const state = {};
+
+    checkboxes.forEach((checkbox) => {
+        const index = checkbox.dataset.index;
+        state[index] = checkbox.checked;
+    });
+
+    localStorage.setItem("billState", JSON.stringify(state));
+}
+
+// Calculate the total amount dynamically
+
+function calculateTotal() {
+    const checkboxes = document.querySelectorAll(".bill-checkbox:checked");
+    let total = 0;
+
+    checkboxes.forEach((checkbox) => {
+        total += parseInt(checkbox.dataset.amount, 10);
+    });
+
+    totalAmountSpan.textContent = total;
+    localStorage.setItem("amount", total);
+    saveState(); // Save state whenever total is updated
+}
+
+// Add event listener to the table for checkbox changes
+billList.addEventListener("change", (event) => {
+    if (event.target.classList.contains("bill-checkbox")) {
+        calculateTotal();
+    }
+});
+
+// Add event listener for the "Proceed to Pay" button
+document.getElementById("proceedToPay").addEventListener("click", () => {
+    const totalAmount = parseInt(totalAmountSpan.textContent, 10);
+    if (totalAmount > 0) {
+        alert(`Proceeding to payment. Total Amount: ₹${totalAmount}`);
+        window.location.href = "bill_payment.html";
+        
+
+    } else {
+        alert("Please select at least one bill to pay.");
+    }
+});
+//function storeInLocalStorge(total){
+//    
+//}
+
+
+    </script>
+</body>
+
+</html>

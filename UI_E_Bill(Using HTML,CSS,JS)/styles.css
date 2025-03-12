@@ -1,0 +1,208 @@
+body {
+	font-family: 'Roboto', Arial, sans-serif;
+	margin: 0;
+	padding: 20px;
+	place-items: center;
+	/* background-image: url("image_1.jpg");
+	background-repeat: no-repeat, repeat; */
+	background-color: #f4f4f4;
+	background-size: cover;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.container {
+	background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 500px; /* Fixed width */
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for form */
+    gap: 20px;
+    align-items: start;
+    overflow: hidden; /* Prevent content overflow */;
+	overflow-y: auto;
+	margin-top: 10%;
+}
+
+h1 {
+	text-align: center;
+	grid-column: span 2;
+	color: #007bff;
+	font-size: 1.8rem;
+	letter-spacing: 1px;
+}
+
+.form-item {
+	display: flex;
+    flex-direction: column;
+    position: relative; /* To position error messages properly */
+    min-height: 60px; /* Reserve space for error messages */
+}
+
+label {
+	font-weight: bold;
+	margin-bottom: 5px;
+	font-size: 15px;
+	color: #000;
+}
+
+input,
+select,
+textarea {
+	padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+    width: 90%; /* Ensure consistent width */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, 
+select:focus,
+textarea:focus {
+	border-color: #007bff;
+	outline: none;
+	box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+	
+}
+
+.mobile-container {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+button {
+	position: center;
+	padding: 12px;
+	border: none;
+	border-radius: 12px;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 14px;
+	transition: background-color 0.3s ease, transform 0.2s;
+}
+
+#registerButton {
+	background-color: #28a745;
+	color: white;
+}
+
+#registerButton:hover {
+	background-color: #00db32;
+	transform: translateY(-3px);
+}
+#loginButton {
+	background-color: #5c32f6;
+	color: white;
+}
+
+#loginButton:hover {
+	background-color: #38069d;
+	transform: translateY(-3px);
+}
+#resetButton {
+	background-color: #d11e2f;
+	color: white;
+}
+
+#resetButton:hover {
+	background-color: red;
+	transform: translateY(-3px);
+}
+
+.hidden {
+	display: none;
+}
+
+
+.error {
+    color: red;
+    font-size: 0.9em;
+	font-size: 12px;
+	margin-top: 5px;
+}
+
+.alert {
+    display: none;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    margin-top: 20px;
+}
+
+.alert-box {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.alert-message {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.alert-button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.alert-button:hover {
+    background-color: #218838;
+}
+
+
+.success-message {
+	color: #28a745;
+	font-weight: bold;
+	font-size: 1rem;
+	text-align: center;
+}
+
+#acknowledgmentMessage {
+	margin-top: 20px;
+	background-color: #d4edda;
+	border: 1px solid #c3e6cb;
+	padding: 20px;
+	border-radius: 8px;
+	grid-column: span 2;
+	text-align: center;
+}
+
+/* Buttons aligned */
+.button-container {
+	grid-column: span 2;
+	display: flex;
+	justify-content:space-around;
+	
+}
+
+/* Responsive Design */
+@media (max-width : 768px) {
+	.container {
+		grid-template-columns: 1fr;
+	}
+
+	h1 {
+		font-size: 1.5rem;
+	}
+}

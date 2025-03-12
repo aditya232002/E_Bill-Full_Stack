@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Status</title>
+    <link rel="stylesheet" href="status.css">
+</head>
+
+<body>
+	<header>
+        <h1>Electricity Bill Payment</h1>
+        
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="user-info" id="userInfo"><b></b></div>
+            <a href="view_pay_bill.html">Pay Bills</a>
+            <a href="complain_registration.html">Register Complain</a>
+            <a class="logout" href="index.html">Logout</a>
+        </div>
+        <span class="open-btn" onclick="openNav()">&#9776;</span>
+        </div>
+    </header>
+	
+    <div class="container">
+        <main>
+            <section>
+                <h2>Check Your Complaint Status</h2>
+                <form id="complaint-form">
+                    <label for="complaint-number">Complaint Number:</label>
+                    <input type="text" id="complaint-number" placeholder="Enter Complaint Number">
+                    <div class="button">
+                        <button type="reset">Reset</button>
+                        <button type="button" id="get-status">Get Complaint Status</button>
+                    </div>
+                </form>
+            </section>
+            <section id="status-display" style="display: none;">
+                <h3>Complaint Status Details</h3>
+                <p><strong>Customer ID:</strong> <span id="consumerId"></span></p>
+                <p><strong>Name:</strong> <span id="consumerName"></span></p>
+                <p><strong>Complaint ID:</strong> <span id="consumer-number"></span></p>
+                <p><strong>Mobile Number:</strong> <span id="contact-number"></span></p>
+                <p><strong>Complaint Type:</strong> <span id="complaint-type"></span></p>
+                <p><strong>Category:</strong> <span id="category"></span></p>
+                <p><strong>Details:</strong> <span id="details"></span></p>
+				<p><strong>Status:</strong> <span id="status"></span></p>
+            </section>
+        </main>
+    </div>
+<script src="status.js"></script>
+</body>
+
+</html>

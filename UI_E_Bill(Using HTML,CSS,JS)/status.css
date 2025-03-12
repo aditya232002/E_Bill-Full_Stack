@@ -1,0 +1,223 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .user-info button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+main {
+    padding: 20px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height: 66vh;
+}
+
+section {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section h2 {
+    color: #007bff;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    font-size: 14px;
+    text-align: left;
+    color: #333;
+}
+
+form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button[type="reset"] {
+    background-color: #6c757d;
+    color: white;
+}
+
+button#get-status {
+    background-color: #007bff;
+    color: white;
+}
+
+#status-display {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+#status-display h3 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+#status-display p {
+    font-size: 1em;
+    color: #555;
+    margin: 5px 0;
+}
+
+#status-display strong {
+    color: #000;
+}
+
+header {
+            background-color: #007bff;
+            color: white;
+            padding: 19px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-buttons button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            color: white;
+            background-color: #dc3545;
+            /* Button color */
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .header-buttons button:hover {
+            background-color: #c82333;
+            /* Hover color */
+            transform: translateY(-3px);
+        }
+
+.sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #007bff;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #ffffff;
+            display: block;
+            transition: 0.0s;
+        }
+
+        .sidenav a:hover {
+            color: #000000;
+        }
+
+        .sidenav.closebtn {
+            position: absolute;
+            top: 0;
+            left: 25px;
+            font-size: 35px;
+            margin-right: 50px;
+        }
+
+        .sidenav .user-info {
+            padding: 8px 32px;
+            font-size: 25px;
+            color: #f1f1f1;
+        }
+
+        .sidenav .logout {
+            padding: 8px 32px;
+            color: #f1f1f1;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .sidenav .logout:hover {
+            color: #f70000;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        .open-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+        }

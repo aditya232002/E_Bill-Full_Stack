@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complain Registration</title>
+    <link rel="stylesheet" href="complain_registration.css">
+</head>
+<body>
+     <header>
+        <h1>Electricity Bill Payment</h1>
+        
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="user-info" id="userInfo"></div>
+            <a href="home.html">Home</a>
+            <a href="view_pay_bill.html">Pay Bills</a>
+            <a href="status.html">Complain Status</a>
+            <a class="logout" href="index.html">Logout</a>
+        </div>
+        <span class="open-btn" onclick="openNav()">&#9776;</span>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <h2>Register Complaint</h2>
+        <div class="form-container">
+            <form id="complaintForm">
+                <label for="mobileNumber">Mobile Number:</label>
+                <input type="text" id="mobileNumber" placeholder="Enter your Mobile Number" maxlength="10" required>
+                <div class="error" id="mobileNumberError"></div>
+
+                <label for="complaintType">Complaint Type:</label>
+                <select id="complaintType" required>
+                    <option value="" disabled selected>Select a complaint type</option>
+                    <option value="Billing">Billing</option>
+                    <option value="Voltage">Voltage</option>
+                    <option value="Disruption">Disruption</option>
+                    <option value="Street Light">Street Light</option>
+                    <option value="Pole">Pole</option>
+                </select>
+                <div class="error" id="complaintTypeError"></div>
+
+                <label for="category">Category:</label>
+                <select id="category" required>
+                    <option value="" disabled selected>Select a complaint type first</option>
+                </select>
+                <div class="error" id="categoryError"></div>
+
+                <label for="details">Details:</label>
+                <textarea id="details" rows="4" placeholder="Provide more details about your complaint" required></textarea>
+                <div class="error" id="detailsError"></div>
+
+                <button type="button" id="submitComplaint">Submit Complaint</button>
+            </form>
+            <div id="successMessage"></div>
+        </div>
+    </div>
+
+    <script src="complain_registration.js"></script>
+
+
+</body>
+
+</html>

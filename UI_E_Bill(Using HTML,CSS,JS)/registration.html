@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS file -->
+</head>
+
+<body>
+    <h1>Customer Registration</h1>
+    <div class="container">
+        <div class="form-group">
+            <label for="consumerId">Consumer ID :</label>
+            <div>
+                <input type="text" id="consumerId" placeholder="Consumer ID (13 digit)" maxlength="13" required>
+                <div class="error" id="consumerIdError"></div>
+            </div>
+            
+        </div>
+        <div class="form-group">
+            <label for="billNumber">Bill Number:</label>
+            <div>
+                <input type="text" id="billNumber" placeholder="Bill Number (Last 5 Digit)" maxlength="5" required>
+                <div class="error" id="billNumberError"></div>
+            </div>
+           
+        </div>
+        <div class="form-group">
+            <label for="title">Title: </label>
+            <div>
+                <select id="title" required>
+                    <option value="" disabled selected>Select Title</option>
+                    <option value="Mr.">Mr.</option>
+                    <option value="Ms.">Ms.</option>
+                    <option value="Mrs.">Mrs.</option>
+                </select>
+            </div>
+            
+        </div>
+        <div class="form-group">
+            <label for="customerName">Customer Name:</label>
+           <div>
+                <input type="text" id="customerName" placeholder="Name"required>
+                <div class="error" id="customerNameError"></div>
+           </div> 
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <div>
+                <input type="email" id="email" placeholder="Email" required>
+                <div class="error" id="emailError"></div>
+            </div>
+        </div>
+        <div class="form-item">
+            <label for="countryCode">Country Code: </label>
+            <div class="mobile-container">
+                <select id="countryCode" required>
+                    <option value="" disabled selected>Select Code</option>
+                    <option value="+1">+1</option>
+                    <option value="+91" >+91</option>
+                    <option value="+44">+44</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="userId">User ID:</label>
+            <div>
+                <input type="text" id="userId"  placeholder="User ID" required>
+                <div class="error" id="userIdError"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="mobileNumber">Mobile Number:</label>
+            <div class="form-group">
+                <input type="text" id="mobileNumber" placeholder="Mobile Number" maxlength="10" required>
+                <div class="error" id="mobileNumberError"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <div>
+                <input type="password" id="password"  placeholder="Password" required>
+                <div class="error" id="passwordError"></div>
+            </div>
+           
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password:</label>
+            <div>
+                <input type="password" id="confirmPassword"  placeholder="Confirm Password" required>
+                <div class="error" id="confirmPasswordError"></div>
+            </div>
+            
+        </div>
+        <div class="button-container">
+            <button type="button" id="registerButton">Register</button>
+            <button type="login" id="loginButton" onclick="location.href='index.html'">Log in</button>
+            <button type="reset" id="resetButton">Reset</button>
+            
+        </div>
+
+        <div class="alert-box" id="alertBox">
+            <div class="alert-message" id="alertMessage"></div>
+            <button class="alert-button" id="alertOkButton">OK</button>
+        </div>
+
+        <script src="registration.js"></script> <!-- Link to JavaScript file -->
+</body>
+
+</html>
